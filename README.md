@@ -11,7 +11,17 @@ The Generator takes a low resolution(LR) image as input and tries to generate a 
 ## Discriminator
 
 The Discriminator learns from the actual training data and also the gererated results of the Generator and tries to distinguish real and generated images.
-        
+
+## Instructions for Usage
+Prepare train and test npy files
+```
+python3 prepare.py
+```
+Train the model
+```
+python3 train.py
+```
+
 ## Working of the Model
 As the training goes the generator gets better and better at generating realistic outputs while the discriminator finds it harder and harder to distingush real and fake images. 
 
@@ -25,6 +35,7 @@ Here are some of the results of super resolution on images from our testing data
 
 | ![lenna](lenna.png)| 
 |:--:| 
+
 
 ## Datasets
 ### Training Dataset
