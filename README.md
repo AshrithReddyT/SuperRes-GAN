@@ -26,7 +26,7 @@ python3 train.py
 As the training goes the generator gets better and better at generating realistic outputs while the discriminator finds it harder and harder to distingush real and fake images. 
 
 Here are some of the results of super resolution on images from our testing dataset:
-
+Left image is super resolution using bilinear interpolation and Right image is the output of our GAN.
 | ![comic](comic.png) | 
 |:--:| 
 
