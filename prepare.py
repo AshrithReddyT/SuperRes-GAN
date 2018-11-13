@@ -29,7 +29,7 @@ if __name__ == '__main__':
     if not os.path.exists(args.output):
         os.makedirs(args.output)
 
-    train_imgs = np.empty(shape=(training_set_size, 256, 256, 3), dtype=np.uint8)
+    train_imgs = np.empty(shape=(training_set_size, 128, 128, 3), dtype=np.uint8)
     print('Preparing Training Data...')
     for i,infile in enumerate(train_files):
         if i % 1000 == 0:
@@ -38,21 +38,21 @@ if __name__ == '__main__':
             im = Image.open(infile)
             rgbimg = Image.new('RGB', im.size)
             rgbimg.paste(im)
-            img = rgbimg.resize((256,256))
+            img = rgbimg.resize((128,128))
             train_imgs[i] = np.asarray(img)
         except IOError:
             print("cannot prepare '%s'" % infile)
     np.save(train_path,train_imgs)
     
     print('Training Data Done.')
-    test_imgs = np.empty(shape=(testing_set_size, 256, 256, 3), dtype=np.uint8)
+    test_imgs = np.empty(shape=(testing_set_size, 128, 128, 3), dtype=np.uint8)
     print('Preparing Testing Data...')
     for i,infile in enumerate(test_files):
         try:
             im = Image.open(infile)
             rgbimg = Image.new('RGB', im.size)
             rgbimg.paste(im)
-            img = rgbimg.resize((256,256))
+            img = rgbimg.resize((128,128))
             test_imgs[i] = np.asarray(img)
         except IOError:
             print("cannot prepare '%s'" % infile)
