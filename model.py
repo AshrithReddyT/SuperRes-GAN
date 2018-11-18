@@ -43,6 +43,7 @@ def discriminator(images, is_training=True, reuse=False):
         conv4 = conv2d(conv3, output_dim=1, stride=2)
         conv4 = lrelu(conv4)
 
+        conv4 = tf.contrib.layers.flatten(conv4)
         out = dense(conv4 , 1)
     
     return out
